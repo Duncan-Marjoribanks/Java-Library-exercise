@@ -14,8 +14,8 @@ public class Library {
             this.stock.add(book);
     }
 
-    public void removeBook(Book book){
-            this.stock.remove(book);
+    public Book removeBook(){
+            return this.stock.remove(0);
     }
 
     public int stockCount() {

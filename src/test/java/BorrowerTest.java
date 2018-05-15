@@ -22,10 +22,15 @@ public class BorrowerTest {
         borrower.collect(book);
         assertEquals(1, borrower.collectionCount());
     }
-//    @Test
-//    public void canBorrowABookFromLibrary(){
-//
-//    }
+
+    @Test
+    public void canBorrowABookFromLibrary(){
+        library.addBook(book);
+        borrower.borrowBookFromLibrary(library);
+        assertEquals(1, borrower.collectionCount());
+        assertEquals(0, library.stockCount());
+
+    }
 
 
 }

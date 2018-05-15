@@ -28,7 +28,7 @@ public class LibraryTest {
     @Test
     public void canRemoveBook(){
         library.addBook(book);
-        library.removeBook(book);
+        library.removeBook();
         assertEquals(0, library.stockCount());
     }
 
