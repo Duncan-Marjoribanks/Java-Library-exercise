@@ -18,4 +18,9 @@ public class LibraryTest {
         library.addBook(book);
         assertEquals(1, library.stockCount());
     }
+
+    @Test
+    public void isStockFull(){
+        assertEquals(true, library.reachedCapacity());
+    }
 }
