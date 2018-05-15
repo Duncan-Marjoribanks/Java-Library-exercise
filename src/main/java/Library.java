@@ -10,16 +10,19 @@ public class Library {
     }
 
     public void addBook(Book book){
-        this.stock.add(book);
+        if(!this.reachedCapacity())
+            this.stock.add(book);
     }
 
+    public void removeBook(Book book){
+            this.stock.remove(book);
+    }
 
     public int stockCount() {
         return stock.size();
     }
 
     public boolean reachedCapacity() {
-        if(this.stockCount() == capacity);
-        return true;
+        return this.stockCount() == capacity;
     }
 }

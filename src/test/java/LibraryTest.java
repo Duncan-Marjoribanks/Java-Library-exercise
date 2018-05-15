@@ -4,8 +4,8 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class LibraryTest {
-    Library library;
-    Book book;
+    private Library library;
+    private Book book;
 
     @Before
     public void before(){
@@ -16,11 +16,30 @@ public class LibraryTest {
     @Test
     public void canAddBook(){
         library.addBook(book);
-        assertEquals(1, library.stockCount());
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        assertEquals(6, library.stockCount());
+    }
+
+    @Test
+    public void canRemoveBook(){
+        library.addBook(book);
+        library.removeBook(book);
+        assertEquals(0, library.stockCount());
     }
 
     @Test
     public void isStockFull(){
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
         assertEquals(true, library.reachedCapacity());
     }
 }
